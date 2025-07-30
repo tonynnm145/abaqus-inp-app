@@ -53,10 +53,10 @@ streamlit run app.py
    - Chọn file .inp của Abaqus từ máy tính
    - File phải có định dạng .inp hợp lệ
 
-2. **Nhập tham số k**
+2. **Chọn tham số k**
    - Giá trị k cho tính toán module đàn hồi phân lớp
-   - Phạm vi: 0.1 - 10.0
-   - Giá trị mặc định: 1.0
+   - Phạm vi: 0 - 2.0
+   - Giá trị mặc định: 0
 
 3. **Xem kết quả**
    - Kiểm tra bảng tọa độ Z được trích xuất
@@ -75,8 +75,8 @@ E = Eb + (Et - Eb) × ((2z + h)/(2h))^k
 
 Trong đó:
 - **E**: Module đàn hồi tại tọa độ z
-- **Eb**: Module đàn hồi đáy = 70 GPa
-- **Et**: Module đàn hồi đỉnh = 380 GPa
+- **Eb**: Module đàn hồi vật liệu dưới = 70 GPa
+- **Et**: Module đàn hồi vật liệu trên = 380 GPa
 - **h**: Chiều dày = 0.1
 - **k**: Tham số phân lớp (người dùng nhập)
 - **z**: Tọa độ Z của node
@@ -94,7 +94,7 @@ abaqus-inp-processor/
 ├── backend.py          # Logic xử lý backend
 ├── requirements.txt    # Dependencies
 ├── README.md          # Hướng dẫn sử dụng
-└── sample_files/      # Thư mục chứa file mẫu (nếu có)
+└── Job-demo.inp/      # File inp mẫu đầu vào
 ```
 
 ## 🔧 Chức năng chi tiết
@@ -102,7 +102,7 @@ abaqus-inp-processor/
 ### 1. Xử lý file INP
 - Đọc và parse file INP
 - Trích xuất thông tin node
-- Lấy tọa độ Z duy nhất
+- Lấy các tọa độ Z được chia trên mô hình
 
 ### 2. Tính toán vật liệu
 - Tính module đàn hồi cho từng lớp
@@ -146,15 +146,12 @@ abaqus-inp-processor/
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Tạo Pull Request
 
-## 📄 License
-
-Dự án này được phân phối dưới giấy phép MIT. Xem file `LICENSE` để biết thêm chi tiết.
 
 ## 📞 Liên hệ
 
-- **Tác giả**: [Tên tác giả]
-- **Email**: [email@example.com]
-- **GitHub**: [github.com/username]
+- **Tác giả**: Nguyễn Nhật Minh
+- **Email**: NhatMinh1452003@gmail.com
+- **GitHub**: github.com/tonynnm145
 
 ## 🙏 Cảm ơn
 
